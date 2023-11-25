@@ -7,9 +7,27 @@ typedef struct {
     int op2;
 } Exclusion;
 
+// Structure pour représenter le graphe orienté acyclique
+typedef struct {
+    int numVertices; // Nombre total d'opérations
+    int numExclusions; // Nombre de paires d'opérations interdites
+    Exclusion exclusions[MAX_OPERATIONS]; // Tableau de paires d'opérations interdites
+    int **exclusionMatrix; // Matrice d'adjacence pour les contraintes d'exclusion
+} Graph;
+
 int main()
 {
-    printf("Hello !\n");
+    // Charger les données du fichier exclusions.txt
+    FILE *file = fopen("exclusions.txt", "r");
+    if (file == NULL) {
+        perror("Erreur lors de l'ouverture du fichier exclusions.txt");
+        return EXIT_FAILURE;
+    }
+
+    // Initialiser le graphe et les contraintes
+    Graph graph;
+    initializeGraph(&graph, MAX_OPERATIONS);
+    
     return 0;
 }
   
