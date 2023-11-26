@@ -33,6 +33,15 @@ int main()
     // Initialiser le graphe et les contraintes
     Graph graph;
     initializeGraph(&graph, MAX_OPERATIONS);
+
+    // Lire les exclusions depuis le fichier et les ajouter au graphe
+    int op1, op2;
+    while (fscanf(file, "%d %d", &op1, &op2) == 2) {
+        addExclusion(&graph, op1, op2);
+    }
+
+    // Fermer le fichier
+    fclose(file);
     
     return 0;
 }
