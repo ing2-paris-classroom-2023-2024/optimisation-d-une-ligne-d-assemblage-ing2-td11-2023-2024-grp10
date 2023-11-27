@@ -3,7 +3,7 @@
 //
 //
 #include "tempscycle.h"
-
+/*
 
 // sous programme pour lire dans le ficher le temps de cycle
 float liretempscycle(const char* nomfichier) {
@@ -25,4 +25,4 @@ float liretempscycle(const char* nomfichier) {
 
     fclose(fichier);
     return tempscycle;
-}
+}*/
