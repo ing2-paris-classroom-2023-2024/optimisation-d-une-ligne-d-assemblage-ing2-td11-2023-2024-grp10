@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 // Structure pour représenter une paire d'opérations interdites 
-typedef struct {
+typedef struct {   
     int op1;
     int op2;
 } Exclusion;
