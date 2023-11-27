@@ -15,7 +15,7 @@ typedef struct {
     int **exclusionMatrix; // Matrice d'adjacence pour les contraintes d'exclusion
 } Graph;
 
-// Structure pour représenter une opération avec son temps d'exécution
+// Structure qui permet de représenter une opération avec son temps d'exécution
 typedef struct {
     int operationNumber;
     double executionTime;
