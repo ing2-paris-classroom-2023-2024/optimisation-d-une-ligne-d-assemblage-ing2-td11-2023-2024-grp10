@@ -34,7 +34,7 @@ int main()
     Graph graph;
     initializeGraph(&graph, MAX_OPERATIONS);
 
-    // Lire les exclusions depuis le fichier et les ajouter au graphe
+    // Lire les exclusions depuis le fichier ainsi que les ajouter au graphe
     int op1, op2;
     while (fscanf(file, "%d %d", &op1, &op2) == 2) {
         addExclusion(&graph, op1, op2);
