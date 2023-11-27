@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Structure pour représenter une paire d'opérations interdites ce
+// Structure pour représenter une paire d'opérations interdites ce q
 typedef struct {   
     int op1;
     int op2;
