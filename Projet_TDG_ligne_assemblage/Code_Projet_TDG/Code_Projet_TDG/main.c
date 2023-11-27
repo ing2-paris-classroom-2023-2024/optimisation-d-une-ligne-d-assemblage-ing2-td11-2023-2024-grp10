@@ -42,7 +42,13 @@ int main()
 
     // Fermer le fichier
     fclose(file);
-    
+
+    // Charger les données du fichier operations.txt
+    file = fopen("operations.txt", "r");
+    if (file == NULL) {
+        perror("Erreur lors de l'ouverture du fichier operations.txt");
+        return EXIT_FAILURE;
+    }
     return 0;
 }
   
