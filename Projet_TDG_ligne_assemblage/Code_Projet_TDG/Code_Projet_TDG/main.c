@@ -3,7 +3,7 @@
 
 // Structure pour représenter une paire d'opérations interdites
 typedef struct {   
-    int op1;
+    int op1; 
     int op2;
 } Exclusion;
 
