@@ -7,7 +7,7 @@ typedef struct {
     int op2;
 } Exclusion;
 
-// C'est un tructure qui permet de représenter le graphe orienté sans cycle (acyclique)
+// C'est une tructure qui permet de représenter le graphe orienté sans cycle (acyclique)
 typedef struct {
     int numVertices; // Nombre total d'opérations
     int numExclusions; // Nombre de paires d'opérations interdites
