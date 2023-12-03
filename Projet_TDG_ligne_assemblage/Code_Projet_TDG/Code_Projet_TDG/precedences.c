@@ -8,3 +8,9 @@ typedef struct {
     int operationNumber;
     double executionTime;
 } Operation;
+
+// Structure pour représenter un nœud du graphe
+typedef struct Node {
+    int operation;
+    struct Node* next;
+} Node;
