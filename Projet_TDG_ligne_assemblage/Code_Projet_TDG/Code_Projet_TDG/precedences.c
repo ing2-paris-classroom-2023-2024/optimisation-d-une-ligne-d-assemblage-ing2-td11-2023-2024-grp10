@@ -45,3 +45,17 @@ Graph* initializeGraph(int numOperations) {
 
     return graph;
 }
+
+// Fonction pour ajouter une arête au graphe
+void addEdge(Graph* graph, int from, int to) {
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->operation = to;
+    newNode->next = graph->adjList[from];
+    graph->adjList[from] = newNode;
+
+    // Met à jour le degré entrant de la destination
+    graph->inDegree[to]++;
+    // Marque les opérations comme spécifiées
+    graph->isSpecified[from] = 1;
+    graph->isSpecified[to] = 1;
+}
