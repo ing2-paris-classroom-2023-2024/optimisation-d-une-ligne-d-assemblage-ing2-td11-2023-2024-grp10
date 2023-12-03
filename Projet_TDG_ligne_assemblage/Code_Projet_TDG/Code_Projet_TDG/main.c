@@ -61,7 +61,7 @@ int main()
         perror("Erreur lors de l'ouverture du fichier operations.txt");
         return EXIT_FAILURE;
     }
-     // Lire les opérations depuis le fichier
+    // Lire les opérations depuis le fichier
     Operation operations[MAX_OPERATIONS];
     int numOperations = readOperations(operations, file);
 
