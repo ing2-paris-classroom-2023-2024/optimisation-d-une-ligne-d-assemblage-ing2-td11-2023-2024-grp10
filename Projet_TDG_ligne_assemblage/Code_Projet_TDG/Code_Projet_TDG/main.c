@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//appel des bibliotheque
 // C'est une structure qui permet de représenter une paire d'opérations interdites ce qui est très important
 typedef struct {   
     int op1;
