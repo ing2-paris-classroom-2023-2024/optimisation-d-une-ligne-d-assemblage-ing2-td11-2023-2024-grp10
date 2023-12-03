@@ -59,3 +59,14 @@ void addEdge(Graph* graph, int from, int to) {
     graph->isSpecified[from] = 1;
     graph->isSpecified[to] = 1;
 }
+
+int main() {
+    FILE* filePrecedences = fopen("precedences.txt", "r");
+    FILE* fileOperations = fopen("operations.txt", "r");
+    if (filePrecedences == NULL || fileOperations == NULL) {
+        fprintf(stderr, "Erreur lors de l'ouverture du fichier.\n");
+        return 1;
+    }
+    
+    return 0;
+}
