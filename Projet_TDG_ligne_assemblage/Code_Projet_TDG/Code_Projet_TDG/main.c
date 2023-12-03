@@ -21,7 +21,7 @@ typedef struct {
     double executionTime;
 } Operation;
 
-// Fonction pour initialiser le graphe
+// Fonction pour initialiser le 
 void initializeGraph(Graph *graph, int numVertices) {
     graph->numVertices = numVertices;
     graph->numExclusions = 0;
