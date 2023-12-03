@@ -42,7 +42,7 @@ int main()
         return EXIT_FAILURE;
     }
 
-    // Initialiser le graphe et les contraintes
+    // Initialisation du graphe et les contraintes
     Graph graph;
     initializeGraph(&graph, MAX_OPERATIONS);
 
