@@ -22,3 +22,12 @@ typedef struct Graph {
     int inDegree[MAX_OPERATIONS];
     int isSpecified[MAX_OPERATIONS];
 } Graph;
+
+// Fonction pour lire les opérations depuis le fichier
+int readOperations(Operation *operations, FILE *file) {
+    int numOperations = 0;
+    while (fscanf(file, "%d %lf", &(operations[numOperations].operationNumber), &(operations[numOperations].executionTime)) == 2) {
+        ++numOperations;
+    }
+    return numOperations;
+}
