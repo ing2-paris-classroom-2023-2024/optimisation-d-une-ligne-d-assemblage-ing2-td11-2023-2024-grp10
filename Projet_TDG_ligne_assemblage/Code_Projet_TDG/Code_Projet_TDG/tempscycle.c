@@ -28,14 +28,18 @@ float liretempscycle(const char* nomfichier) {
     fclose(fichier);
     return tempscycle;
 }
+
 int lireoperations(const char *fileName, Operation *operations, int maxSize) {
     FILE *file;
+    //variable pour compter le nb d'operations
     int count = 0;
 
+    //on ouvre le fichier en mode lecture
     file = fopen(fileName, "r");
     if (file == NULL) {
-        perror("Erreur en ouvrant le fichier");
-        return -1;
+        //blindage
+        printf("Erreur en ouvrant le fichier");
+        exit(1);
     }
 
     while (fscanf(file, "%d %lf", &operations[count].operationNumber, &operations[count].executionTime) == 2) {
@@ -56,6 +60,8 @@ void printOperations(const Operation *operations, int size) {
         printf("Operation %d: Temps d'execution = %.2f\n", operations[i].operationNumber, operations[i].executionTime);
     }
 }*/
+
+// fonction pour creer et afficher les stations
 void creerStations(Operation *operations, int size, float tempsCycle) {
     // on initialise la première station a 1
     int stationNumber = 1;
@@ -64,6 +70,7 @@ void creerStations(Operation *operations, int size, float tempsCycle) {
 
     printf("Station %d:\n", stationNumber);
     for (int i = 0; i < size; i++) {
+        // on verrifie si le temps de la station depasse le temps de cycle
         if (tempsTotal + operations[i].executionTime > tempsCycle) {
             printf("    Temps total de la Station %d: %.2f\n", stationNumber, tempsTotalStation);
             stationNumber++;
@@ -80,7 +87,7 @@ void creerStations(Operation *operations, int size, float tempsCycle) {
 
 
 int main() {
-    // on init notre tab de structures
+    // on initialise notre tab de structures
     Operation operations[100];
     // on recup dans les fichiers le temps de cycles et les operations avec leur temps d'execution
     float tempsCycle = liretempscycle("../temps_cycle.txt");
