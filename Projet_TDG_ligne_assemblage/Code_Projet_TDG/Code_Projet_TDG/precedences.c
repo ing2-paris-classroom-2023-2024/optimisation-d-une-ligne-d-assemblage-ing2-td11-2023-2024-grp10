@@ -71,6 +71,24 @@ int main() {
     // Lire les opérations depuis le fichier
     Operation operations[MAX_OPERATIONS];
     int numOperations = readOperations(operations, fileOperations);
+
+    // Initialiser le nombre total d'opérations avec le maximum
+    int maxNumOperations = numOperations;
+
+    int from, to;
+
+    // Lecture du nombre total d'opérations à partir du fichier de précédences
+    while (fscanf(filePrecedences, "%d %d", &from, &to) == 2) {
+        if (from > maxNumOperations) {
+            maxNumOperations = from;
+        }
+        if (to > maxNumOperations) {
+            maxNumOperations = to;
+        }
+    }
+
+    // Initialisation du graphe
+    Graph* graph = initializeGraph(maxNumOperations);
     
     return 0;
 }
