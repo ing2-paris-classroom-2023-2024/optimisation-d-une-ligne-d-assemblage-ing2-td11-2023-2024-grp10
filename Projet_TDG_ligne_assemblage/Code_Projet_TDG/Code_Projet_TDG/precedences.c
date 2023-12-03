@@ -31,3 +31,17 @@ int readOperations(Operation *operations, FILE *file) {
     }
     return numOperations;
 }
+
+// Fonction pour initialiser le graphe
+Graph* initializeGraph(int numOperations) {
+    Graph* graph = (Graph*)malloc(sizeof(Graph));
+    graph->numOperations = numOperations;
+
+    for (int i = 0; i < numOperations; ++i) {
+        graph->adjList[i] = NULL;
+        graph->inDegree[i] = 0;
+        graph->isSpecified[i] = 0;
+    }
+
+    return graph;
+}
