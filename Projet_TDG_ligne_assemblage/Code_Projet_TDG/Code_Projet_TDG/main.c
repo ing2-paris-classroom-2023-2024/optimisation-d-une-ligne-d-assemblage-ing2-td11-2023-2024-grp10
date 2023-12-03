@@ -52,7 +52,7 @@ int main()
         addExclusion(&graph, op1, op2);
     }
 
-    // Fermer le fichier ouvert
+    // Fermer le fichier 
     fclose(file);
 
     // Charger les données du fichier operations.txt
