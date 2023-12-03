@@ -25,6 +25,12 @@ typedef struct {
 void initializeGraph(Graph *graph, int numVertices) {
     graph->numVertices = numVertices;
     graph->numExclusions = 0;
+
+    // Initialisation de la matrice d'adjacence pour les contraintes d'exclusion
+    graph->exclusionMatrix = malloc(numVertices * sizeof(int *));
+    for (int i = 0; i < numVertices; ++i) {
+        graph->exclusionMatrix[i] = calloc(numVertices, sizeof(int));
+    }
 }
 
 int main()
